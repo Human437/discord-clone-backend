@@ -1,10 +1,7 @@
-import express from "express";
-import mongoose from "mongoose";
+const app = require('./app')
 
-const app = express();
-const port = process.env.PORT || 8002;
+const { PORT } = require('./config')
 
-
-app.get('/', (req,res) => res.status(200).send("Hello World!"))
-
-app.listen(port, ()=>console.log(`Listening on localhost:${port}`))
+app.listen(PORT, () => {
+  console.log(`Server listening at http://localhost:${PORT}`)
+})
